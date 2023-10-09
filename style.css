@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: 'Archivo Black', sans-serif;
+    overflow: hidden;
+}
+
+main {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    scroll-snap-align: start;
+    overflow: hidden;
+}
+
+section:nth-child(1) {
+    background-color: #e91e63;
+}
+
+section:nth-child(2) {
+    background-color: #e2b815;
+}
+
+section:nth-child(3) {
+    background-color: #204233;
+}
+
+section .text {
+    position: absolute;
+    z-index: 1;
+    bottom: 5%;
+    text-align: center;
+    color: #fff;
+}
+
+section .text h2 {
+    font-size: 7rem;
+    text-transform: uppercase;
+}
+
+section .text h4 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    background-color: #000000;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+
+section .text h2::after {
+    content: '_';
+    animation: blink .5s steps(5, start) infinite;
+}
+
+section .text h4::before {
+    content: '> ';
+}
+
+section .text h4::after {
+    content: ' <';
+}
+
+section .text p {
+    font-size: 0.8rem;
+    width: 50%;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
